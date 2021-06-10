@@ -1,13 +1,16 @@
 .landing {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61)), url("https://www.gratefulgypsies.com/wp-content/uploads/2017/07/DSC08690-001.jpg");
+    background-image: url("https://www.inversk.co.ke/wp-content/uploads/2019/11/art-design-college.jpg");
     background-size: cover;
+    width: 100%;
+    min-height: 100vh;
 }
 hr.style-three {
     height: 30px;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(0, 0, 0);
     border-width: 1px 0 0 0;
     border-radius: 20px;
+    align-items: center;
 }
 
 hr.style-three:before {
