@@ -1,0 +1,38 @@
+{% load static %}{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>{{title}}</title>
+   {% block styles %} {% bootstrap_css %}
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Baskervville|BenchNine|Gupter|Pragati+Narrow&display=swap" rel="stylesheet">{% endblock %}
+
+
+    <!-- scripts styling -->
+
+
+    {% block scripts%}
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    {% bootstrap_javascript%}
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+    {%endblock%}
+</head>
+
+<body>
+    {% include 'navbar.html' %} {% block content %}
+    <div class="container-fluid">
+
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>
