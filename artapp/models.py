@@ -2,13 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from cloudinary.models import CloudinaryField
 import datetime as dt
 
 # Create your models here.
 
 class Profile(models.Model):
     name = models.CharField(max_length=100)
-    profile_picture = models.ImageField(blank=True)
+    profile_picture = CloudinaryField(blank=True)
     bio = models.TextField(max_length=500, blank=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
     
@@ -41,7 +42,7 @@ class Post(models.Model):
     title = models.CharField(blank=False, max_length=500)
     instagram = models.CharField(max_length=100, blank=True)
     description =models.TextField(max_length=500, blank=False)
-    photo = models.ImageField(blank=False, upload_to='images/')
+    photo = CloudinaryField(blank=False, upload_to='images/')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
     date = models.DateField(auto_now_add=True, blank=True)
     
