@@ -1,0 +1,58 @@
+{% extends 'base.html' %}{% load bootstrap4 %}{% block content %}
+
+<div class="container-fluid" style="margin-top: 10%; margin-bottom: 7%;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <img class="" src="{{ arts.photo.url }}" style="height: 450px;" alt="{{arts.title}}">
+
+                <div class="card-body ny">
+                    <h4 class="card-title tit">{{arts.title}}</h4>
+                    <hr>
+                    <p class="card-text desc">{{arts.description}}</p>
+                    <br>
+                    <div>
+                        <p class="card-text desc">{{comments|length}} comments</p>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="card-text user">Posted by: <small>{{arts.user}}</small></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="card-text dat">On: <small>{{arts.date}}</small></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <form action="{% url 'single-art' arts.id %}" method="POST" class="">
+                {% csrf_token %} {% bootstrap_form form %}
+                <input type="submit" class="btn btn-success" value="Update">
+            </form>
+
+        </div>
+        <div class="col-md-6" style="margin-bottom: 4%;">
+            <h5 class="com">Comments</h5>
+            <hr> {% for comment in comments %}
+            <div>
+                <ul class="list-inline home-list">
+                    <li class="list-inline-item ">
+                        <a href="{% url 'profile' username=comment.user.username %}"><span class="use">{{comment.user.username}}</span></a>
+                    </li>
+                    <li class="list-inline-item commo">
+                        <p>{{comment.comment}} </p>
+                    </li>
+
+                </ul>
+
+            </div>
+            {% empty %}
+            <h4 class="no">There are no comments yet</h4>
+            {% endfor %}
+            <hr>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
