@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from . models import Post, Profile, Comments
 from . forms import PostComments, PostImagesForm,PostProfile, UpdateUserProfileForm, NewsLetterForm
 from django.contrib.auth.models import User
+from friendship.models import Friend, Follow, Block
+from friendship.exceptions import AlreadyExistsError
 # Create your views here.
 
 def home(request):
