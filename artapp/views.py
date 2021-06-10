@@ -99,3 +99,29 @@ def single_art(request, art_id):
     else:
         form = PostComments()
     return render(request, 'single_art.html', {'arts':arts,'form':form, 'comments':comments, 'title':title})
+
+def follow(request, user_id):
+    other_user = User.objects.get(id=user_id)
+    follow = Follow.objects.add_follower(request.user, other_user)
+
+    return redirect('single-art')
+
+
+@login_required(login_url='/accounts/login/')
+def unfollow(request, user_id):
+    other_user = User.objects.get(id=user_id)
+
+    follow = Follow.objects.remove_follower(request.user, other_user)
+
+    return redirect('single-art')
+
+
+def newsletter(request):
+    name = request.POST.get('your_name')
+    email = request.POST.get('email')
+    
+    recipient = NewsLetterRecipients(name = name, email = email)
+    recipient.save()
+    send_welcome_email(name, email)
+    data = {'success': 'You have been successfully added to mailing list'}
+    return JsonResponse(data)
