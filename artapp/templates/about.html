@@ -1,0 +1,85 @@
+{% extends 'base.html' %}{% load static %}{% load bootstrap4 %}{% block content %}
+
+<div class="container-fluid">
+    <div class="miss">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="text-center mission" style="margin-top:4%;">Our Missions</h3>
+                <hr class="r">
+                <p class="text-center pa1 animated fadeIn" style="animation-delay: 1s;">"To privide the best representation of art and at the same time the best user experience" </p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-center vision" style="margin-top:4%;">Our Vision</h3>
+                <hr>
+                <p class="text-center pa2 animated fadeIn" style="animation-delay: 2s;">" To be able to connect the artistas and give them platform to showcase their masterpieces." </p>
+
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-center acco" style="margin-top:4%;">Accomplishments</h3>
+                <hr>
+                <p class="text-center pa3 animated fadeIn" style="animation-delay: 3s;">We have been able to represent a number of artists and the feedback from them is overwhelming. Follow us on twitter, facebook and instagram to see some of our work.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <h1 class="text-center tim" style="margin-top:4%; margin-bottom:2%;">Testimonials</h1>
+    <div class=" text-center row test" style="margin-bottom: 4%;">
+        <div class="col-md-3">
+            "As an underground artist it was tough for me to showcase my art pieces but with Creative Hub i was able to post some of my best works and got me a representation"
+            <p class="text-center">~ Susan .B</p>
+        </div>
+        <div class="col-md-3">
+
+            "I posted an art from my hood and guess what, it went viral and now the artist was hired to paint a potray of Nelson Mandela. Good work CreativeHub"
+            <p class="text-center">~ Martinez</p>
+        </div>
+        <div class="col-md-3">
+            "I wish creativehub was more of dealing with every art and singers would benefit from their services"
+            <p class="text-center">~ Cardi B</p>
+        </div>
+        <div class="col-md-3">
+            "Street arts is a way of showing our thoughts to a mass of people and creativehub just brought that to the light...thanks cretivehub"
+            <p class="text-center">~ Papi Chulo</p>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <footer class="bot">
+            <div class="row word">
+                <div class="col-md-4">
+                    <hr>
+                    <h3 class="tal">Talk to Us</h3>
+                    <p class="info">info@artworld.com</p>
+                    <p class="abo" style="margin-top: 2%;">Contact Us</p>
+                    email: info@artworld.com <br> phone: +2547245667<br>
+                    <a href="https://www.facebook.com/votreART/" class="ace">Facebook</a><br>
+                    <a href="https://twitter.com/ArtBasel" class="wit">Twitter</a><br>
+                    <a href="https://www.instagram.com/art/" class="nsta">Instagram</a>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <h4 class="dai">Daily NewsLetter</h4><br>
+                    <form action="{%url 'photos'%}" method="post">
+                        {%csrf_token%} {% bootstrap_form form %}
+                        <input type="submit" value="Subscribe" class="btn btn-sm bt-outline btn-primary">
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <h5 class="term">Terms and Conditions</h5>
+                    <div class="an">
+                        <p>The site is strictly for art pieces and in no way are you allowed to post inapproriate pieces</p>
+                        <p>Agreeing to our terms and conditions automatically allow us to have access to your email and username</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <p class="text-center copy">&copyMahan-noor: All rights-reserved</p>
+        </footer>
+    </div>
+
+</div>
+{% endblock %}
