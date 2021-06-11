@@ -8,6 +8,37 @@
                 <a href="/" class="nav-link" id="nab">Home<span class="sr-only">(current)</span></a>
 
             </li>
-          
+            <li>
+                <a href="{% url 'postImage' %}" class="nav-link" id="nab">
+                    <spa>Post Art</span>
+                </a>
+            </li>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                </ul>
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a href="{% url 'photos' %}" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="nab">{{ user.username|title }}</span><img src="{{ user.profile. }}">
+                        
+                        </a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item text-center" href="{% url 'profile' user.username %}" id="nab">Profile</a>
+                        <hr>
+                        <a href="{% url 'logout' %}" class="text-center dropdown-item" id="nab">Log Out</a>
+                    </div>
+
+                </li>
+                <li>
+                    <a href="{% url 'photos' %}" class="nav-link" id="nab">Gallery<span class="sr-only"></span></a>
+                </li>
+                {% else %}
+                <li class='nav-item'><a href="/accounts/login" class="nav-link" id="nab ">Login</a></li>
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link" id="nab">About</a></li>
+                {% endif %}
+            </div>
+        </div>
     </nav>
 </header>
+
+          
+  
