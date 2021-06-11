@@ -80,3 +80,49 @@ hr.style-three:before {
 li {
     list-style-type: none;
 }
+
+.hub {
+    color: black;
+    font-family: 'Abel', sans-serif;
+    font-size: 75px;
+    text-shadow: 2px 2px hsla(hue, saturation, lightness, alpha);
+}
+
+.tit,
+.desc,
+.user,
+.dat {
+    color: black;
+}
+
+.desc {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+}
+
+.tit {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.image-box {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-box img {
+    transition: all 0.3s;
+    display: block;
+    height: auto;
+    transform: scale(1);
+    filter: grayscale(0);
+}
