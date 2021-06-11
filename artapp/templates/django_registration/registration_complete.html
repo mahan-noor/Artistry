@@ -1,0 +1,12 @@
+{% extends "registration/base.html" %}{% load static%} {% load bootstrap4%} {{ block.super }} {% block content %}
+<div class="container">
+    <h1 class="text-center">Registration complete</h1>
+    <hr>
+    <div class="jumbotron">
+        <h3 class="text-center">Succssefully created an Account with CreativeArts</h3>
+        <p>Thank you for Creating an account with us. By creating this account you have already agreed to our terms and conditions</p>
+        <a href="/accounts/login"> <span id="ig">Next</span></a>
+    </div>
+
+</div>
+{% endblock %}

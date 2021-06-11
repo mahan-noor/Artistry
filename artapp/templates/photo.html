@@ -49,3 +49,42 @@
         </div>
         {% endfor %}
     </div>
+    <div class="bottom">
+        <footer class="bot">
+            <div class="row word">
+                <div class="col-md-4">
+                    <hr>
+                    <h3 class="tal">Talk to Us</h3>
+                    <p class="info">info@artworld.com</p>
+                    <a href="{%url 'about'%}"> <span class="abo">About</span></a><br>
+                    <p class="abo" style="margin-top: 2%;">Contact Us</p>
+                    email: info@artworld.com<br> phone: +2547245667 <br>
+                    <a href="https://www.facebook.com/votreART/" class="ace">Facebook</a><br>
+                    <a href="https://twitter.com/ArtBasel" class="wit">Twitter</a><br>
+                    <a href="https://www.instagram.com/art/" class="nsta">Instagram</a>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <h4 class="dai">Daily NewsLetter</h4><br>
+                    <form action="{%url 'photos'%}" method="post">
+                        {%csrf_token%} {% bootstrap_form form %}
+                        <input type="submit" value="Subscribe" class="btn btn-sm bt-outline btn-primary">
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <hr>
+                    <h5 class="term">Terms and Conditions</h5>
+                    <div class="an">
+                        <p>The site is strictly for art pieces and in no way are you allowed to post inapproriate pieces</p>
+                        <p>Agreeing to our terms and conditions automatically allow us to have access to your email and username</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <p class="text-center copy">&copyMahan-noor: All rights-reserved</p>
+        </footer>
+    </div>
+</div>
+
+{% endblock %}
