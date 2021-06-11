@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'artapp',
-    'bootstrap4'
+    'bootstrap4',
+    'friendship',
 ]
 
 MIDDLEWARE = [

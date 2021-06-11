@@ -9,7 +9,7 @@ import datetime as dt
 
 class Profile(models.Model):
     name = models.CharField(max_length=100)
-    profile_picture = CloudinaryField(blank=True)
+    profile_picture = CloudinaryField('1080x1080')
     bio = models.TextField(max_length=500, blank=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE,primary_key=True)
     
@@ -42,7 +42,7 @@ class Post(models.Model):
     title = models.CharField(blank=False, max_length=500)
     instagram = models.CharField(max_length=100, blank=True)
     description =models.TextField(max_length=500, blank=False)
-    photo = CloudinaryField(blank=False, upload_to='images/')
+    photo = CloudinaryField("1920x1080")
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
     date = models.DateField(auto_now_add=True, blank=True)
     

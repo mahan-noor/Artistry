@@ -5,6 +5,8 @@ cloudinary==1.25.0
 confusable-homoglyphs==3.2.0
 Django==3.2.4
 django-bootstrap4==3.0.1
+django-crispy-forms==1.11.2
+django-friendship==1.9.1
 django-registration==3.1.2
 Pillow==8.2.0
 psycopg2==2.8.6
